@@ -1,0 +1,64 @@
+//---------------------------------------------------------------------------
+
+#include <fmx.h>
+#pragma hdrstop
+
+#include "Unit2.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+TForm2 *Form2;
+//---------------------------------------------------------------------------
+__fastcall TForm2::TForm2(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::FormCreate(TObject *Sender)
+{
+	//Блок выравнивания Rectangle по центру
+	Rectangle1->Height = Panel1->Height / 2;
+	Rectangle2->Height = Panel1->Height / 2;
+
+	//Выравниваем главные заголовок
+	Label1->Position->X = 17;
+	Label1->Width = Rectangle5->Width - 15;
+	Label2->Position->X = 17;
+	Label2->Width = Rectangle5->Width - 15;
+
+	//Выравниваем параметры 1го цвета
+	Label3->Position->X = 17;
+	Label4->Position->X = Label3->Width + 20;
+	Label5->Position->X = Panel6->Width - Label5->Width + 20;
+
+	//Выравниваем параметры 2го цвета
+	Label6->Position->X = 17;
+	Label7->Position->X = Label6->Width + 20;
+	Label8->Position->X = Panel9->Width - Label8->Width + 20;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::FormResize(TObject *Sender)
+{
+	//Блок позиционирования Rectangle по центру
+	Rectangle1->Height = Panel1->Height / 2 - 69; //Где 45 - размер основного заголовка,
+	Rectangle2->Height = Panel1->Height / 2 - 69; //а 24 - размер маленькой  панели. 45+29=69
+
+	//Позиционирование главных заголовока
+	Label1->Position->X = 17;
+	Label1->Width = Rectangle5->Width - 15;
+	Label2->Position->X = 17;
+	Label2->Width = Rectangle5->Width - 15;
+
+	//Позиционируем параметры 1го цвета
+	Label3->Position->X = 17;
+	Label4->Position->X = Panel6->Width / 3 + 30; //Позиционируем по центру
+	Label5->Position->X = Panel6->Width - Label5->Width + 20;
+
+	//Позиционируем параметры 2го цвета
+	Label6->Position->X = 17;
+	Label7->Position->X = Form4->Width / 3 + 30; //Позиционируем по центру
+	Label8->Position->X = Panel9->Width - Label8->Width + 20;
+}
+//---------------------------------------------------------------------------
+

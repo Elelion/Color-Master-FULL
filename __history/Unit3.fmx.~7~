@@ -1,0 +1,433 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 615
+  ClientWidth = 360
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnResize = FormResize
+  DesignerMobile = True
+  DesignerWidth = 360
+  DesignerHeight = 640
+  DesignerDeviceName = 'Samsung Galaxy S4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Panel2: TPanel
+    Align = Bottom
+    Height = 23.000000000000000000
+    Position.Y = 592.000000000000000000
+    Width = 360.000000000000000000
+    TabOrder = 1
+    object Rectangle7: TRectangle
+      Align = Client
+      Fill.Color = xFF066878
+      Height = 23.000000000000000000
+      Sides = []
+      Width = 360.000000000000000000
+    end
+    object Label2: TLabel
+      StyledSettings = [Style]
+      Height = 23.000000000000000000
+      TextSettings.Font.Family = '(Default)'
+      TextSettings.FontColor = claWhite
+      Text = '    RGB:'
+      Width = 57.000000000000000000
+    end
+    object Label4: TLabel
+      StyledSettings = [Style]
+      Height = 23.000000000000000000
+      Position.X = 248.000000000000000000
+      TextSettings.Font.Family = '(Default)'
+      TextSettings.FontColor = claWhite
+      Text = 'HTML: '
+      Width = 48.000000000000000000
+    end
+    object Label5: TLabel
+      StyledSettings = [Family, Style]
+      Height = 23.000000000000000000
+      Position.X = 296.000000000000000000
+      TextSettings.FontColor = claWhite
+      Text = '#DCDCDC'
+      Width = 64.000000000000000000
+    end
+    object Label3: TLabel
+      StyledSettings = [Family, Style]
+      Height = 23.000000000000000000
+      Position.X = 56.000000000000000000
+      TextSettings.FontColor = claWhite
+      Text = '255. 255. 255'
+      Width = 97.000000000000000000
+    end
+  end
+  object Rectangle1: TRectangle
+    Align = Client
+    Height = 523.000000000000000000
+    Width = 360.000000000000000000
+  end
+  object Panel1: TPanel
+    Align = Top
+    Height = 46.000000000000000000
+    Width = 360.000000000000000000
+    TabOrder = 2
+    object Rectangle4: TRectangle
+      Align = Left
+      Fill.Color = xFF066878
+      Height = 46.000000000000000000
+      Sides = []
+      Width = 9.000000000000000000
+    end
+    object Rectangle5: TRectangle
+      Align = Client
+      Fill.Color = xFF066878
+      Height = 46.000000000000000000
+      Sides = []
+      Width = 351.000000000000000000
+    end
+    object Label1: TLabel
+      StyledSettings = [Family, Size, Style]
+      Height = 46.000000000000000000
+      Position.X = 17.000000000000000000
+      TextSettings.FontColor = claWhite
+      Text = 'Label1'
+      Width = 248.000000000000000000
+    end
+    object ImgBtn2: TImage
+      MultiResBitmap = <
+        item
+          Width = 46
+          Height = 46
+          PNG = {
+            89504E470D0A1A0A0000000D494844520000002E0000002E080600000057B92B
+            37000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            008B494441546843EDD6210E80300C85E18183FB91A039007781036021E17ED8
+            61BA4CD6342F69F27F66954FB46B87E9B86B4968B4371D82AB115C8DE06A6983
+            872FA06F5FADEAE6F3B12A0EADA24670B5F0E11CDECBAAAE2E9B5571386BD508
+            AEC6AFD2B0F21D045763381B56BE831E5723B81ADF61C3ADE220B81AC3D970AB
+            38E8713582AB115C2D69F0527E0C7328D33ADE4A500000000049454E44AE4260
+            82}
+        end>
+      Height = 46.000000000000000000
+      Position.X = 312.000000000000000000
+      Visible = False
+      Width = 46.000000000000000000
+      OnClick = ImgBtn2Click
+    end
+    object ImgBtn1: TImage
+      MultiResBitmap = <
+        item
+          Width = 46
+          Height = 46
+          PNG = {
+            89504E470D0A1A0A0000000D494844520000002E0000002E080600000057B92B
+            37000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            008D494441546843EDD6A10D80400C85E103040C83642818010660059642320C
+            8680E90559D3BCA4C9FF99AB7CA2BDB6E9E7F52D09B5F6A643703582AB115C2D
+            6DF0F005741FBB55BF61D9AC8A43ABA8115C2D7C38BBEBB4EAF78C935571386B
+            D508AEC6AF52B1F21D045763382B56BE831E5723B81ADF61C5ADE220B81AC359
+            71AB38E8713582AB115C2D69F0523EEE01255999E156500000000049454E44AE
+            426082}
+        end>
+      Height = 46.000000000000000000
+      Position.X = 312.000000000000000000
+      Width = 46.000000000000000000
+      OnClick = ImgBtn1Click
+    end
+    object ImgBtn3: TImage
+      MultiResBitmap = <
+        item
+          Width = 46
+          Height = 46
+          PNG = {
+            89504E470D0A1A0A0000000D494844520000002E0000002E080600000057B92B
+            37000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            0138494441546843EDD73D0AC2401086E1A8858257B1B4B5F52C7A043D8057F0
+            2EB6B6965E45B011E5931D19657F64661809CEDB2410129EDDAC26198C579B7B
+            D7C38669DBBB02EE5DC0BD0BB87701F72EE0DEF5166EFA9275DDEFD25EBEC97A
+            9BF6F499C03978BA58A6BDF72EC743DAB319801A4E6802DF66F3E736D7E87C7A
+            0D408B57AD718E06B88646384E036C2DAB5662F827FA331CCFE1ACF0AA192FA1
+            5B71BC34119C66AA8606AC86A373A5B32E9EF1D68C01D6BA1B9A5917C35BA8D2
+            1AE7B5AE514BB5C67F59C0BDFB3FB8E6E14169AE21826B1F1E3CE9B544F06F1E
+            1E00D55074AEF42F51BC540855C2035442D1399A3B278603D5C2E7E268E96C23
+            F5FB387FC746A5F76C3E382D1A997C01018FF80072D11DD2A291E93727A241E4
+            B20053E670AFC43FCE5F1770EF02EE5DC0BD0BB87701F7ADEB1E1BB27CEAF031
+            BD190000000049454E44AE426082}
+        end>
+      Height = 46.000000000000000000
+      Position.X = 264.000000000000000000
+      Visible = False
+      Width = 46.000000000000000000
+      OnClick = ImgBtn3Click
+    end
+  end
+  object Panel4: TPanel
+    Align = Bottom
+    Height = 23.000000000000000000
+    Position.Y = 569.000000000000000000
+    Width = 360.000000000000000000
+    TabOrder = 6
+    object Rectangle6: TRectangle
+      Align = Client
+      Fill.Color = xFF066878
+      Height = 23.000000000000000000
+      Sides = []
+      Width = 360.000000000000000000
+    end
+    object Label7: TLabel
+      StyledSettings = [Family, Style]
+      Height = 23.000000000000000000
+      Position.X = 57.000000000000000000
+      TextSettings.FontColor = claWhite
+      Text = '< name a color >'
+      Width = 160.000000000000000000
+    end
+    object Label6: TLabel
+      StyledSettings = [Family, Style]
+      Height = 23.000000000000000000
+      TextSettings.FontColor = claWhite
+      Text = '    Name:'
+      Width = 57.000000000000000000
+    end
+  end
+  object Panel6: TPanel
+    Height = 99.000000000000000000
+    Position.X = 168.000000000000000000
+    Position.Y = 47.000000000000000000
+    Visible = False
+    Width = 187.000000000000000000
+    TabOrder = 8
+    object Panel12: TPanel
+      Align = Top
+      Height = 50.000000000000000000
+      Width = 187.000000000000000000
+      TabOrder = 3
+      object Rectangle2: TRectangle
+        Fill.Color = xFF0991A7
+        Height = 50.000000000000000000
+        Sides = [Left, Right]
+        Width = 187.000000000000000000
+        OnClick = Button4Click
+      end
+      object FullName1: TLabel
+        StyledSettings = [Family, Style]
+        Height = 50.000000000000000000
+        Position.X = 8.000000000000000000
+        TextSettings.FontColor = claWhite
+        Text = 'FullName1'
+        Width = 129.000000000000000000
+      end
+      object Button4: TButton
+        Align = Right
+        Enabled = False
+        Height = 48.000000000000000000
+        Position.X = 139.000000000000000000
+        Position.Y = 1.000000000000000000
+        StyleLookup = 'additembutton'
+        TabOrder = 1
+        Text = 'Button5'
+        Width = 48.000000000000000000
+        OnClick = Button4Click
+        object FloatAnimation4: TFloatAnimation
+          Duration = 0.300000011920929000
+          PropertyName = 'Opacity'
+          StartValue = 0.000000000000000000
+          StopValue = 1.000000000000000000
+          Trigger = 'IsPressed=false'
+        end
+      end
+    end
+    object Panel8: TPanel
+      Align = Bottom
+      Height = 49.000000000000000000
+      Position.Y = 50.000000000000000000
+      Width = 187.000000000000000000
+      TabOrder = 1
+      object Rectangle3: TRectangle
+        Fill.Color = xFF0991A7
+        Height = 50.000000000000000000
+        Width = 187.000000000000000000
+        OnClick = Button5Click
+      end
+      object FullName2: TLabel
+        StyledSettings = [Family, Style]
+        Height = 49.000000000000000000
+        Position.X = 8.000000000000000000
+        TextSettings.FontColor = claWhite
+        Text = 'FullName2'
+        Width = 129.000000000000000000
+      end
+      object Button5: TButton
+        Align = Right
+        Enabled = False
+        Height = 48.000000000000000000
+        Position.X = 139.000000000000000000
+        StyleLookup = 'additembutton'
+        TabOrder = 3
+        Text = 'Button5'
+        Width = 48.000000000000000000
+        OnClick = Button5Click
+        object FloatAnimation5: TFloatAnimation
+          Duration = 0.300000011920929000
+          PropertyName = 'Opacity'
+          StartValue = 0.000000000000000000
+          StopValue = 1.000000000000000000
+          Trigger = 'IsPressed=false'
+        end
+      end
+    end
+    object FloatAnimation1: TFloatAnimation
+      Duration = 0.300000011920929000
+      PropertyName = 'Opacity'
+      StartValue = 0.000000000000000000
+      StopValue = 1.000000000000000000
+      Trigger = 'IsVisible=true'
+    end
+  end
+  object buf1: TLabel
+    Height = 49.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 512.000000000000000000
+    Text = #1057#1088#1072#1074#1085#1077#1085#1080#1077' '#1085#1077' '#1079#1072#1076#1072#1085#1086
+    Visible = False
+    Width = 113.000000000000000000
+  end
+  object RoundRect2: TRoundRect
+    Fill.Color = xFF0991A7
+    Height = 76.000000000000000000
+    Position.X = -38.000000000000000000
+    Position.Y = 304.000000000000000000
+    Visible = False
+    Width = 76.000000000000000000
+  end
+  object RoundRect4: TRoundRect
+    Fill.Color = xFF0991A7
+    Height = 76.000000000000000000
+    Position.X = 324.000000000000000000
+    Position.Y = 304.000000000000000000
+    Visible = False
+    Width = 76.000000000000000000
+  end
+  object RoundRect3: TRoundRect
+    Fill.Color = xFF066878
+    Height = 76.000000000000000000
+    Position.X = 324.000000000000000000
+    Position.Y = 304.000000000000000000
+    Width = 76.000000000000000000
+    OnClick = BtnRightClick
+  end
+  object BtnRightPrs: TImage
+    MultiResBitmap = <
+      item
+        Width = 24
+        Height = 24
+        PNG = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          009949444154484BD596BB0D80201400C1CE119DC2599CC2112DD1235A3E781F
+          28BC84189A3B1E34E6F5384B9AC8F27EA7D10C5CFB5657043180B894525724A2
+          BAA248440C3C8F9F72CEEFCE1F694E3022D2BDA26844F50691882A00DE883A00
+          9E882900D6883960C51CE0B49CFA8369984AC214B0CA411DF0C84115F0CAA11B
+          88C8A11988CA410C8C9083EA0DBC721003081147E4F0F7BF8A946E8FFB6E2D14
+          416C050000000049454E44AE426082}
+      end>
+    Height = 24.000000000000000000
+    Position.X = 336.000000000000000000
+    Position.Y = 330.000000000000000000
+    Visible = False
+    Width = 24.000000000000000000
+  end
+  object BtnRight: TImage
+    MultiResBitmap = <
+      item
+        Width = 24
+        Height = 24
+        PNG = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          009949444154484BD596BB0D80201400C1C6555DC1095CC155ADD0235A3E781F
+          28BC84189A3B1E34E675DB4B9AC8F27EA7D10C5CE75157043180B894525724A2
+          BAA248440C3C8F9F72CEEFCE1F694E3022D2BDA26844F50691882A00DE883A00
+          9E882900D6883960C51CE0B49CFA8369984AC214B0CA411DF0C84115F0CAA11B
+          88C8A11988CA410C8C9083EA0DBC721003081147E4F0F7BF8A946EB43C6E2D13
+          C68CB60000000049454E44AE426082}
+      end>
+    Height = 24.000000000000000000
+    Position.X = 336.000000000000000000
+    Position.Y = 330.000000000000000000
+    Width = 24.000000000000000000
+    OnClick = BtnRightClick
+  end
+  object RoundRect1: TRoundRect
+    Fill.Color = xFF066878
+    Height = 76.000000000000000000
+    Position.X = -38.000000000000000000
+    Position.Y = 304.000000000000000000
+    Width = 76.000000000000000000
+    OnClick = BtnLeftClick
+  end
+  object BtnLeftPrs: TImage
+    MultiResBitmap = <
+      item
+        Width = 24
+        Height = 24
+        PNG = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          009F49444154484BD596BB0D80300C05133A46640A66610A46A40C1C224D508C
+          3F5070921568DED99822795CD6923E64B8CECF0809B6793A4BC22D20B8947296
+          2471096AB806B3A00DCF39A7E347B9DEEE9804D670500B3CE1A01278C3E15110
+          090751100D87AEE08D70502FD94B5740B7745D611AA6B2224EF086E4F1134525
+          AA1D4424EA257B256A017824260158256601B412099700AA84E2B9C7DF6F1529
+          ED401D6E2D3EEF72040000000049454E44AE426082}
+      end>
+    Height = 24.000000000000000000
+    Position.Y = 330.000000000000000000
+    Visible = False
+    Width = 24.000000000000000000
+  end
+  object BtnLeft: TImage
+    MultiResBitmap = <
+      item
+        Width = 24
+        Height = 24
+        PNG = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          009F49444154484BD596BB0D80300C05131A56650526600556A50A1C224D508C
+          3F5070921568DED99822799CE6923E64B8CECF0809B675394BC22D20B8947296
+          2471096AB806B3A00DCF39A7E347B9DEEE9804D670500B3CE1A01278C3E15110
+          090751100D87AEE08D70502FD94B5740B7745D611AA6B2224EF086E4F1134525
+          AA1D4424EA257B256A017824260158256601B412099700AA84E2B9C7DF6F1529
+          ED4E1E6E2D8B642B060000000049454E44AE426082}
+      end>
+    Height = 24.000000000000000000
+    Position.Y = 330.000000000000000000
+    Width = 24.000000000000000000
+    OnClick = BtnLeftClick
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 8
+    Top = 256
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer2Timer
+    Left = 328
+    Top = 256
+  end
+  object buf2: TLabel
+    Height = 23.000000000000000000
+    Position.X = 136.000000000000000000
+    Position.Y = 520.000000000000000000
+    Text = 'buf2'
+    Visible = False
+    Width = 82.000000000000000000
+  end
+end

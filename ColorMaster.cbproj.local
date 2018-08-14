@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.843,E:\C++\Projects\111\Unit1.h=E:\C++\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.598,=E:\C++\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.498,=E:\C++\Projects\111\Unit3.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.843,E:\C++\Projects\111\Unit1.fmx=E:\C++\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.658,E:\C++\Projects\111\ColorMasterPCH1.h=E:\C++\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.020,=E:\C++\Projects\111\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.843,E:\C++\Projects\111\Unit1.cpp=E:\C++\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.246,E:\C++\Projects\111\ColorMaster.cbproj=E:\C++\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.674,=E:\C++\Project1PCH1.h</Transaction>
+  </Transactions>
+	<MobileDevice>da638cb0</MobileDevice>
+	<BT_BuildType>AppStore</BT_BuildType>
+</BorlandProject>

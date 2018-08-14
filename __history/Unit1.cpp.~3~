@@ -1,0 +1,301 @@
+//---------------------------------------------------------------------------
+
+#include <fmx.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "Unit2.h"
+#include "Unit3.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+TForm1 *Form1;
+
+void ResetLBI()
+{
+//Присваиваем индекс выделенного элемента (для перелистывания с Form3)
+	if(Form1->ListBox1->Visible == true)			{	Form3->buf2->Text = Form1->ListBox1->ItemIndex;				}
+	if(Form1->LB2_MainColors->Visible == true)		{	Form3->buf2->Text = Form1->LB2_MainColors->ItemIndex;		}
+	if(Form1->LB3_RedColors->Visible == true)		{	Form3->buf2->Text = Form1->LB3_RedColors->ItemIndex;		}
+	if(Form1->LB4_GreenColors->Visible == true)		{	Form3->buf2->Text = Form1->LB4_GreenColors->ItemIndex;		}
+	if(Form1->LB5_BlueColors->Visible == true)		{	Form3->buf2->Text = Form1->LB5_BlueColors->ItemIndex;		}
+	if(Form1->LB6_PinkColors->Visible == true)		{	Form3->buf2->Text = Form1->LB6_PinkColors->ItemIndex;		}
+	if(Form1->LB7_OrangeColors->Visible == true)	{	Form3->buf2->Text = Form1->LB7_OrangeColors->ItemIndex;		}
+	if(Form1->LB8_YellowColors->Visible == true)	{	Form3->buf2->Text = Form1->LB8_YellowColors->ItemIndex;		}
+	if(Form1->LB9_VioletColors->Visible == true)	{	Form3->buf2->Text = Form1->LB9_VioletColors->ItemIndex;		}
+	if(Form1->LB10_BrownColors->Visible == true)	{	Form3->buf2->Text = Form1->LB10_BrownColors->ItemIndex;		}
+	if(Form1->LB11_WhiteColors->Visible == true)	{	Form3->buf2->Text = Form1->LB11_WhiteColors->ItemIndex;		}
+	if(Form1->LB12_GreyColors->Visible == true)		{	Form3->buf2->Text = Form1->LB12_GreyColors->ItemIndex;		}
+
+//Сброс ВСЕХ ListBox's (ListBox1, LB2,...12)
+	Form1->ListBox1->ItemIndex = -1;
+	Form1->LB2_MainColors->ItemIndex = -1;
+	Form1->LB3_RedColors->ItemIndex = -1;
+	Form1->LB4_GreenColors->ItemIndex = -1;
+	Form1->LB5_BlueColors->ItemIndex = -1;
+	Form1->LB6_PinkColors->ItemIndex = -1;
+	Form1->LB7_OrangeColors->ItemIndex = -1;
+	Form1->LB8_YellowColors->ItemIndex = -1;
+	Form1->LB9_VioletColors->ItemIndex = -1;
+	Form1->LB10_BrownColors->ItemIndex = -1;
+	Form1->LB11_WhiteColors->ItemIndex = -1;
+	Form1->LB12_GreyColors->ItemIndex = -1;
+}
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormResize(TObject *Sender)
+{
+	Panel2->Visible = false;
+
+	Label1->Position->X = 10;
+	Label1->Position->Y = 12;
+
+//Позиционируем кнопку меню
+	ImgBtn6->Position->X = Panel1->Width - ImgBtn6->Width;
+	ImgBtn5->Position->X = Panel1->Width - ImgBtn5->Width;
+
+//Позиционируем кнопку вверх
+	ImgBtn4->Position->X = Panel1->Width - ImgBtn4->Width * 2; //46 + 46(кнопка меню)
+	ImgBtn3->Position->X = Panel1->Width - ImgBtn3->Width * 2;
+
+//Позиционируем кнопку вниз
+	ImgBtn2->Position->X = Panel1->Width - ImgBtn2->Width * 3; //46 + 46(кнопка меню) + 46(кнопка вверх)
+	ImgBtn1->Position->X = Panel1->Width - ImgBtn1->Width * 3;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+	ListBox1->Visible = true; //Отображаем главную цветовую панель, остальные скрываем
+	LB2_MainColors->Visible = 	false;
+	LB3_RedColors->Visible = 	false;
+	LB4_GreenColors->Visible = 	false;
+	LB5_BlueColors->Visible = 	false;
+	LB6_PinkColors->Visible = 	false;
+	LB7_OrangeColors->Visible = false;
+	LB8_YellowColors->Visible = false;
+	LB9_VioletColors->Visible = false;
+	LB10_BrownColors->Visible = false;
+	LB11_WhiteColors->Visible = false;
+	LB12_GreyColors->Visible = 	false;
+
+	Form1->Panel2->Visible = false;
+	Form1->Label3->Text = Menu1->Text;
+
+	//Выравниваем заголовок
+	Form1->Label1->Position->X = 17;
+	Form1->Label3->Position->X = Label1->Width + 10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ListBox1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          float X, float Y)
+{
+	Panel2->Visible = false; //On scrolling OR touch DOWN - Vissible off PanelMenu
+	ListBox1->ItemIndex = -1;
+
+	ImgBtn5->Visible = true;
+	ImgBtn6->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ListBox1MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          float X, float Y)
+{
+	Panel2->Visible = false; //On scrolling OR touch DOWN - Vissible off PanelMenu
+	ListBox1->ItemIndex = -1;
+
+	ImgBtn5->Visible = true;
+	ImgBtn6->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+	Timer1->Enabled = false;
+
+	ImgBtn1->Visible = true;
+	ImgBtn2->Visible = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ImgBtn1Click(TObject *Sender)
+{
+	TimerSelect->Enabled = false; //Что бы не было события OnClick при Select
+
+	Timer1->Enabled = true;
+	ImgBtn1->Visible = false;
+	ImgBtn2->Visible = true;
+
+	if(ListBox1->Visible == true)
+	{
+		ListBox1->ItemIndex = ListBox1->Count -1;
+		ListBox1->ItemIndex = -1;
+	}
+
+	if(LB2_MainColors->Visible == true)
+	{
+		LB2_MainColors->ItemIndex = LB2_MainColors->Count -1;
+		LB2_MainColors->ItemIndex = -1;
+	}
+
+	if(LB3_RedColors->Visible == true)
+	{
+		LB3_RedColors->ItemIndex = LB3_RedColors->Count -1;
+		LB3_RedColors->ItemIndex = -1;
+	}
+
+	if(LB4_GreenColors->Visible == true)
+	{
+		LB4_GreenColors->ItemIndex = LB4_GreenColors->Count -1;
+		LB4_GreenColors->ItemIndex = -1;
+	}
+
+	if(LB5_BlueColors->Visible == true)
+	{
+		LB5_BlueColors->ItemIndex = LB5_BlueColors->Count -1;
+		LB5_BlueColors->ItemIndex = -1;
+	}
+
+	if(LB6_PinkColors->Visible == true)
+	{
+		LB6_PinkColors->ItemIndex = LB6_PinkColors->Count -1;
+		LB6_PinkColors->ItemIndex = -1;
+	}
+
+	if(LB7_OrangeColors->Visible == true)
+	{
+		LB7_OrangeColors->ItemIndex = LB7_OrangeColors->Count -1;
+		LB7_OrangeColors->ItemIndex = -1;
+	}
+
+	if(LB8_YellowColors->Visible == true)
+	{
+		LB8_YellowColors->ItemIndex = LB8_YellowColors->Count -1;
+		LB8_YellowColors->ItemIndex = -1;
+	}
+
+	if(LB9_VioletColors->Visible == true)
+	{
+		LB9_VioletColors->ItemIndex = LB9_VioletColors->Count -1;
+		LB9_VioletColors->ItemIndex = -1;
+	}
+
+	if(LB10_BrownColors->Visible == true)
+	{
+		LB10_BrownColors->ItemIndex = LB10_BrownColors->Count -1;
+		LB10_BrownColors->ItemIndex = -1;
+	}
+
+	if(LB11_WhiteColors->Visible == true)
+	{
+		LB11_WhiteColors->ItemIndex = LB11_WhiteColors->Count -1;
+		LB11_WhiteColors->ItemIndex = -1;
+	}
+
+	if(LB12_GreyColors->Visible == true)
+	{
+		LB12_GreyColors->ItemIndex = LB12_GreyColors->Count -1;
+		LB12_GreyColors->ItemIndex = -1;
+	}
+
+	Panel2->Visible = false;
+	ImgBtn5->Visible = true;
+	ImgBtn6->Visible = false;
+
+	TimerSelect->Enabled = true; //Включаем обработчик события OnClick при Select
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ImgBtn3Click(TObject *Sender)
+{
+	TimerSelect->Enabled = false; //Что бы не было события OnClick при Select
+
+	Timer2->Enabled = true;
+	ImgBtn3->Visible = false;
+	ImgBtn4->Visible = true;
+
+	if(ListBox1->Visible == true)
+	{
+		ListBox1->ItemIndex = 0;
+		ListBox1->ItemIndex = -1;
+	}
+
+	if(LB2_MainColors->Visible == true)
+	{
+		LB2_MainColors->ItemIndex = 0;
+		LB2_MainColors->ItemIndex = -1;
+	}
+
+	if(LB3_RedColors->Visible == true)
+	{
+		LB3_RedColors->ItemIndex = 0;
+		LB3_RedColors->ItemIndex = -1;
+	}
+
+	if(LB4_GreenColors->Visible == true)
+	{
+		LB4_GreenColors->ItemIndex = 0;
+		LB4_GreenColors->ItemIndex = -1;
+	}
+
+	if(LB5_BlueColors->Visible == true)
+	{
+		LB5_BlueColors->ItemIndex = 0;
+		LB5_BlueColors->ItemIndex = -1;
+	}
+
+	if(LB6_PinkColors->Visible == true)
+	{
+		LB6_PinkColors->ItemIndex = 0;
+		LB6_PinkColors->ItemIndex = -1;
+	}
+
+	if(LB7_OrangeColors->Visible == true)
+	{
+		LB7_OrangeColors->ItemIndex = 0;
+		LB7_OrangeColors->ItemIndex = -1;
+	}
+
+	if(LB8_YellowColors->Visible == true)
+	{
+		LB8_YellowColors->ItemIndex = 0;
+		LB8_YellowColors->ItemIndex = -1;
+	}
+
+	if(LB9_VioletColors->Visible == true)
+	{
+		LB9_VioletColors->ItemIndex = 0;
+		LB9_VioletColors->ItemIndex = -1;
+	}
+
+	if(LB10_BrownColors->Visible == true)
+	{
+		LB10_BrownColors->ItemIndex = 0;
+		LB10_BrownColors->ItemIndex = -1;
+	}
+
+	if(LB11_WhiteColors->Visible == true)
+	{
+		LB11_WhiteColors->ItemIndex = 0;
+		LB11_WhiteColors->ItemIndex = -1;
+	}
+
+	if(LB12_GreyColors->Visible == true)
+	{
+		LB12_GreyColors->ItemIndex = 0;
+		LB12_GreyColors->ItemIndex = -1;
+	}
+
+	Panel2->Visible = false;
+	ImgBtn5->Visible = true;
+	ImgBtn6->Visible = false;
+
+	TimerSelect->Enabled = true; //Включаем обработчик события OnClick при Select
+}
+//---------------------------------------------------------------------------
+
